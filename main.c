@@ -1,6 +1,7 @@
 #include "video.h"
 #include "io.h"
 #include "clever.h"
+#include "string.h"
 
 int main(void) {
     clear();
