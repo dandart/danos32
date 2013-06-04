@@ -4,7 +4,7 @@ LD	= ld
 LDFLAGS = -m elf_i386
 NASM = nasm
  
-OBJFILES = loader.o kernel.o video.o io.o clever.o main.o
+OBJFILES = loader.o kernel.o video.o io.o clever.o string.o main.o
  
 all: kernel.elf
 
