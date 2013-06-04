@@ -1,0 +1,23 @@
+Eh?
+
+It's a hobby, so that I can learn C.
+
+
+So... how-?
+
+Run "make" then run the kernel with grub or qemu -kernel.
+
+
+Aaaa!
+
+If you get an error like:
+
+In file included from /usr/include/features.h:341:0,
+                 from /usr/include/stdint.h:25,
+                 from /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdint.h:3,
+                 from kernel.c:1:
+/usr/include/stdc-predef.h:30:26: fatal error: bits/predefs.h: No such file or directory
+compilation terminated.
+make: *** [kernel.o] Error 1
+
+install the gcc-multilib package.
