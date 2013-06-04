@@ -1,7 +1,17 @@
 #include <stdint.h>
 #include "loader.h"
-/* We can only use  <float.h>, <iso646.h>, <limits.h>, <stdalign.h>,
- * <stdarg.h>, <stdbool.h>, <stddef.h>, <stdint.h>, and <stdnoreturn.h> */
+/* We can only use:
+ *
+ * <float.h>
+ * <iso646.h>
+ * <limits.h>
+ * <stdalign.h>
+ * <stdarg.h>
+ * <stdbool.h>
+ * <stddef.h>
+ * <stdint.h>
+ * <stdnoreturn.h>
+ */
 
 void kmain(void)
 {
