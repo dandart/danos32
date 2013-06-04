@@ -1,4 +1,6 @@
 #include "video.h"
+#include "io.h"
+#include "clever.h"
 
 int main(void) {
     clear();
@@ -6,6 +8,3 @@ int main(void) {
     print(" Thanks for choosing us!");
     return 0;
 }
-
-
-
