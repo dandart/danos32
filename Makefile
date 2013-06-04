@@ -4,14 +4,12 @@ LD	= ld
 LDFLAGS = -m elf_i386
 NASM = nasm
  
-OBJFILES = loader.o kernel.o main.o
+OBJFILES = loader.o kernel.o video.o main.o
  
 all: kernel.elf
 
-.o: .asm.o
-
-.asm.o:
-	${NASM) -f elf -o $@ $<
+loader.o:
+	$(NASM) -f elf -o $@ loader.asm
  
 .c.o:
 	$(CC) $(CFLAGS) -o $@ -c $<
