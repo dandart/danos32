@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include "io.h"
 
 inline void cpuid( int code, uint32_t * a, uint32_t * d )
 {
@@ -23,3 +24,11 @@ inline unsigned read_cr0( void )
     return val;
 }
 
+void reboot() {
+    uint8_t good = 0x02;
+    while (good & 0x02) {
+        good = inb(0x64);
+    }
+    outb(0x64, 0xFE);
+    asm("hlt");
+}
