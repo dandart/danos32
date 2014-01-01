@@ -1,2 +1,2 @@
 void main(void);
-void hang(void);
+extern void halt(void);

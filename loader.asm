@@ -1,11 +1,9 @@
 global loader                           ; making entry point visible to linker
 global magic                            ; we will use this in kmain
 global mbd                              ; we will use this in kmain
-global hang
- 
+global halt
 extern kmain                            ; kmain is defined in kmain.cpp
  
-; setting up the Multiboot header - see GRUB docs for details
 MODULEALIGN equ  1<<0                   ; align loaded modules on page boundaries
 MEMINFO     equ  1<<1                   ; provide memory map
 FLAGS       equ  MODULEALIGN | MEMINFO  ; this is the Multiboot 'flag' field

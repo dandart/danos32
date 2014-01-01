@@ -1,27 +1,30 @@
 CC	= gcc
-CFLAGS	= -m32 -Wall -Wextra -nostdlib -fno-builtin -nostartfiles -nodefaultlibs
+CFLAGS	= -m32 -Wall -Wextra -nostdlib -fno-builtin -nostartfiles -nodefaultlibs -Ilib
 LD	= ld
 LDFLAGS = -m elf_i386
+AS = as
+ASFLAGS = --32
 NASM = nasm
+NASMFLAGS = -f elf
  
-OBJFILES = loader.o kernel.o video.o io.o clever.o string.o main.o
+OBJFILES = loader.o kernel.o lib/video.o lib/io.o lib/clever.o lib/string.o main.o
  
-all: kernel.elf
+all: kernel.bin
 
 loader.o:
-	$(NASM) -f elf -o $@ loader.asm
+	$(NASM) $(NASMFLAGS) -o $@ loader.asm
  
 .c.o:
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-kernel.elf: $(OBJFILES)
+kernel.bin: $(OBJFILES)
 	$(LD) $(LDFLAGS) -T linker.ld -o $@ $^
  
 clean:
-	$(RM) $(OBJFILES) kernel.elf
+	$(RM) $(OBJFILES) kernel.bin
  
 install:
-	$(RM) $(OBJFILES) kernel.elf
+	$(RM) $(OBJFILES) kernel.bin
 
 kvm: all
-	kvm -kernel kernel.elf
+	kvm -kernel kernel.bin
