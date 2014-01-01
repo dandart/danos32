@@ -1,2 +1,4 @@
 *.o
-kernel.elf
+*.bin
+kernel.bin
+

@@ -7,18 +7,18 @@ ASFLAGS = --32
 NASM = nasm
 NASMFLAGS = -f elf
  
-OBJFILES = loader.o kernel.o lib/video.o lib/io.o lib/clever.o lib/string.o main.o
+OBJFILES = src/loader.o src/kernel.o lib/video.o lib/io.o lib/clever.o lib/string.o src/main.o
  
 all: kernel.bin
 
-loader.o:
-	$(NASM) $(NASMFLAGS) -o $@ loader.asm
+src/loader.o:
+	$(NASM) $(NASMFLAGS) -o $@ src/loader.asm
  
 .c.o:
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 kernel.bin: $(OBJFILES)
-	$(LD) $(LDFLAGS) -T linker.ld -o $@ $^
+	$(LD) $(LDFLAGS) -T src/linker.ld -o $@ $^
  
 clean:
 	$(RM) $(OBJFILES) kernel.bin
