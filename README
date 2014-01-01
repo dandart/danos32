@@ -5,8 +5,8 @@ It's a hobby, so that I can learn C.
 
 So... how-?
 
-Run "make" then run the kernel with grub or qemu -kernel.
-
+Run "make".
+Then you can run it with kvm like "make kvm".
 
 Aaaa!
 
