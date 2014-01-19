@@ -13,6 +13,7 @@ void print(char* string) {
     short i = 0;
     do {
         videoram[vrpos*2] = string[i];
+        videoram[vrpos*2+1] = 0x02;
         vrpos++;
         i++;
     } while ('\0' != string[i]);
