@@ -30,9 +30,7 @@ loader:
     cli
 
 halt:
-    .halt:
-    hlt                                 ; halt machine should kernel return
-    jmp .halt
+    jmp $
 
 section .bss
  

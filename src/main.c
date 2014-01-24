@@ -13,5 +13,10 @@ int main(void) {
 	ch = getch_poll();
 	printch(&ch, 1);
     }
+    /*
+    asm volatile ("int $0x3");
+    asm volatile ("int $0x4");
+    */
+
     return 0;
 }
