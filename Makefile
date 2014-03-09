@@ -7,7 +7,7 @@ ASFLAGS = --32
 NASM = nasm
 NASMFLAGS = -f elf
  
-OBJFILES = src/loader.o src/kernel.o lib/ lib/video.o lib/io.o lib/clever.o lib/string.o src/main.o
+OBJFILES = src/loader.o src/kernel.o lib/video.o lib/io.o lib/8042.o lib/clever.o lib/string.o src/main.o
  
 all: kernel.bin
 
